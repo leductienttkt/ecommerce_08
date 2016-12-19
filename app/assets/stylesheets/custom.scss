@@ -1,0 +1,112 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+section {
+  overflow: auto;
+}
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+.mainmenu-area {
+  background: none repeat scroll 0 0 #1abc9c;
+  font-family: "Roboto Condensed",sans-serif;
+  text-transform: uppercase;
+  width: 100%;
+  z-index: 999;
+}
+
+.mainmenu-area ul.navbar-nav li a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 20px;
+}
+
+.mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: 222}
+
+.mainmenu-area .nav > li > a:focus {color: #000}
+
+.shopping-item {
+  float: right;
+  padding: 10px;
+  margin-top: 70px;
+  margin-right: 70px;
+  position: relative;
+}
+
+.cart-amunt {
+  color: #1abc9c;
+  font-weight: 700;
+}
+
+.product-count {
+  background: none repeat scroll 0 0 #1abc9c;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  font-size: 10px;
+  height: 20px;
+  padding-top: 2px;
+  position: absolute;
+  right: -10px;
+  text-align: center;
+  top: -10px;
+  width: 20px;
+}
+
+.shopping-item i.fa {
+  margin-left: 15px;
+}

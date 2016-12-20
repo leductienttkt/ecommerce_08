@@ -3,9 +3,13 @@ en:
   home: "Home" 
   help: "Help"
   about: "About"
-  signin: "signin"
-  signup: "signup" 
-
+  signin: "Sign in"
+  signup: "Sign up"
+  signout: "Sign out"
+  forgot_password: "Forgot password"
+  welcome: "Welcome"
+  login_error: "Loggin failed, please try again"
+  user_authen: "User Authenticate"
   alt:
     logo: "Logo"
     cart: "Cart"

@@ -110,3 +110,70 @@ footer ul li {
 .shopping-item i.fa {
   margin-left: 15px;
 }
+
+.modal-header, h3, .close {
+  background-color: #5cb85c;
+  color: white !important;
+  text-align: center;
+  font-size: 30px;
+}
+
+.navbar-top-links li:last-child {
+  margin-right: 15px;
+}
+
+.navbar-right {
+  float: right !important;
+  margin-right: -15px;
+  margin-top: 5px;
+}
+
+.modal-footer {
+  background-color: #f9f9f9;
+}
+
+.bt-login {
+  background-color: #ff8627;
+  color: #ffffff;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  transition: background-color 300ms linear 0s;
+  &:hover, &:active, &:focus {
+    background-color: #ff8627;
+    color: #ffffff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: background-color 300ms linear 0s;
+  }
+}
+
+.login-tab {
+  margin: 0 auto;
+  max-width: 380px;
+}
+
+.login-modal-header {
+  background: #27ae60;
+  color: #fff;
+  .modal-title, .close {
+    color: #fff;
+  }
+}
+
+.login-modal {
+  i {
+    color: #000;
+  }
+  form {
+    max-width: 340px;
+  }
+}
+
+.tab-pane form {
+  margin: 0 auto;
+}
+
+.login-modal-footer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

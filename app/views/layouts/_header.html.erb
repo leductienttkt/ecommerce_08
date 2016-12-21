@@ -1,12 +1,14 @@
 <div class="container">
   <div class="col-sm-6">
     <div class="logo">
-      <%= link_to image_tag("logo.jpg", alt: t("logo"), class: "img-responsive"), "#" %>
+      <%= link_to image_tag("logo.jpg", alt: t("alt.logo"), 
+        class: "img-responsive"), "#" %>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="shopping-item">
-      <%= link_to image_tag("cart.png", alt: t("cart"), class: "img-responsive"), "#" %>
+      <%= link_to image_tag("cart.png", alt: t("alt.cart"),
+        class: "img-responsive"), "#" %>
       <span id="price_span" class="cart-amunt"></span> 
       <span id="quantity_span" class="product-count"></span>
     </div>
@@ -22,10 +24,18 @@
           <li><%= link_to t("about"), "#" %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to t("signin"), "#", class: "glyphicon glyphicon-log-in" %></li>
-          <li><%= link_to t("signup"), "#", class: "glyphicon glyphicon-user" %></li>
+          <% if is_logged_in? %>
+            <li><%= link_to t("signout"), signout_path, method: :delete, 
+              class: "glyphicon glyphicon-user" %>
+            </li>
+          <% else %>
+            <li><%= link_to t("signin"), "#", class: "glyphicon glyphicon-user", 
+              remote: true, data: {toggle: "modal", target: "#login_form"}%>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
   </div>
 </div>
+<%= render "shared/user_authenticate" %>

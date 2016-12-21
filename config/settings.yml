@@ -2,6 +2,6 @@ maximum:
   name: 50
   address: 255
   phone: 11
-  passwork: 6
+  password: 6
   email: 255
   content: 255

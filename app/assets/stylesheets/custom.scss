@@ -177,3 +177,118 @@ footer ul li {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+.product-f-image {
+  position: relative;
+}
+.product-hover {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;overflow: hidden;
+}
+.product-hover:after {
+  background: none repeat scroll 0 0 #000;
+  content: "";
+  height: 100%;
+  left: -100%;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  width: 100%;transition: .4s;
+}
+.product-hover a {
+  background: none repeat scroll 0 0 #1abc9c;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  left: 10%;
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid #1abc9c;
+  width: 80%;z-index: 99;transition: .4s;
+}
+.product-hover a:hover {
+  background: #000;
+  text-decoration: none;border-color: #444;
+}
+.product-carousel-price ins {
+  color: #1abc9c;
+  font-weight: 700;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.product-hover a i.fa {
+  margin-right: 5px;
+}
+
+.product-hover a.add-to-cart-link {top: -25%;}
+.product-hover a.view-details-link { bottom: -25%;}
+.single-product h2 {
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.single-product h2 a {
+  color: #1abc9c;
+}
+.single-product p {
+  color: #1abc9c;
+  font-weight: 700;
+}
+
+.single-product {
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.single-product:hover {}
+.single-product:hover .product-hover a.add-to-cart-link {top: 30%;}
+.single-product:hover .product-hover a.view-details-link {bottom: 30%;}
+.single-product:hover .product-hover:after{left: 0}
+
+.carousel-inner .item img {
+  display: block;
+  margin: auto;
+  width: 30%;
+  height: 30%;
+}
+
+.single-product-slide h2 {
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.single-product-slide h2 a {
+  color: #1abc9c;
+}
+.single-product-slide p {
+  color: #1abc9c;
+  font-weight: 700;
+}
+
+.single-product-slide {
+  overflow: hidden;
+}
+.single-product-slide:hover {}
+.single-product-slide:hover .product-hover a.add-to-cart-link {top: 30%;}
+.single-product-slide:hover .product-hover a.view-details-link {bottom: 30%;}
+.single-product-slide:hover .product-hover:after{left: 0}
+
+.recently_viewed {
+  margin-top: 50px;
+}
+
+.new_product {
+  margin-top: 50px;
+}

@@ -5,3 +5,8 @@ maximum:
   password: 6
   email: 255
   content: 255
+
+default:
+  top_new_products: 12
+  top_order_products: 12
+  number_of_order: 0

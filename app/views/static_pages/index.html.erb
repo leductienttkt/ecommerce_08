@@ -1,0 +1,14 @@
+<% provide :title, t("home") %>
+<div class="slide_hot_product">
+  <%= render "shared/slide_hot_product" %>
+</div>
+<div class="new_product">
+  <h1><%= t "new_product" %></h1>
+  <%= render @top_new_products %>
+</div>
+<div class="recently_viewed">
+  <% if is_logged_in? %>
+    <h1><%= t "recently_viewed" %></h1>
+    <%= render @recently_products %>
+  <% end %>
+</div>

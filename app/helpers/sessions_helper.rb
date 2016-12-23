@@ -24,4 +24,8 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end
+
+  def current_cart
+    @current_cart ||= Cart.find_by id: cookies.signed[:cart_id]
+  end
 end

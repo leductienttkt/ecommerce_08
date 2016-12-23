@@ -3,9 +3,14 @@
     <div class="product-f-image">
       <%= image_tag product.image, alt: t("product.image") %>
       <div class="product-hover">
-        <%= link_to content_tag(:i, t("product.add_to_cart"), 
-          class: "fa fa-shopping-cart"), 
-          "#", method: :post, class: "add-to-cart-link", remote: true %>
+        <% if product.quantity > 0 %>
+          <%= link_to content_tag(:i, t("product.add_to_cart"), 
+            class: "fa fa-shopping-cart"), 
+            cart_items_path(product_id: product.id), 
+            method: :post, class: "add-to-cart-link", remote: true,
+            data: {confirm: t("confirm.add_to_cart")}
+          %>
+        <% end %>
         <%= link_to content_tag(:i, t("product.see_detail"), 
           class: "fa fa-link"), 
           "#", class: "view-details-link", remote: true %>

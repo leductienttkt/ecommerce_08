@@ -1,0 +1,40 @@
+<div class="container">
+  <div id="hot-product" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#hot-product" data-slide-to="0" class="active"></li>
+      <% @top_order_products.count.times do |n| %>
+        <li data-target="#hot-product" data-slide-to="#{n}"></li>
+      <% end %>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <%= image_tag "logo.jpg", alt: t("product.image") %>
+      </div>
+      <% @top_order_products.each do |product| %>
+     	  <div class="item">
+          <div class="single-product-slide" >
+            <div class="product-f-image">
+              <%= image_tag product.image, alt: t("product.image") %>
+              <div class="product-hover">
+                <%= link_to content_tag(:i, t("product.add_to_cart"), 
+                  class: "fa fa-shopping-cart"), 
+                  "#", method: :post, class: "add-to-cart-link", remote: true %>
+                <%= link_to content_tag(:i, t("product.see_detail"), 
+                  class: "fa fa-link"), 
+                  "#", class: "view-details-link", remote: true %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <a class="left carousel-control" href="#hot-product" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only"><%= t "previous" %></span>
+    </a>
+    <a class="right carousel-control" href="#hot-product" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only"><%= t "next" %></span>
+    </a>
+  </div>
+</div>

@@ -69,9 +69,10 @@ ActiveRecord::Schema.define(version: 20161216044013) do
     t.string   "image"
     t.integer  "quantity"
     t.float    "price"
+    t.integer  "number_of_order", default: 0
     t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 

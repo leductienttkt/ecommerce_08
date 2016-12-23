@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "static_pages#home"
+  root "static_pages#index"
   post "/signin", to: "sessions#create"
   delete "/signout", to: "sessions#destroy"
 end

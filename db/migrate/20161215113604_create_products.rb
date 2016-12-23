@@ -6,6 +6,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.string :image
       t.integer :quantity
       t.float :price
+      t.integer :number_of_order, default: Settings.default.number_of_order
       t.references :category, foreign_key: true
 
       t.timestamps

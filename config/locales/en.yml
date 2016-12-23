@@ -10,6 +10,15 @@ en:
   welcome: "Welcome"
   login_error: "Loggin failed, please try again"
   user_authen: "User Authenticate"
+  previous: "Previous"
+  next: "Next"
   alt:
     logo: "Logo"
     cart: "Cart"
+  recently_viewed: " Recently Views"
+  new_product: "New products"
+  product:
+    see_detail: "See detail"
+    add_to_cart: "Add to cart"
+    image: "product image"
+    price: "$%{price}"

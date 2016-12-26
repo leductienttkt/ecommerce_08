@@ -10,3 +10,10 @@ default:
   top_new_products: 12
   top_order_products: 12
   number_of_order: 0
+  recently: 12
+  same_category: 10
+  round: 1
+  min_product: 0
+
+minrate: 1
+maxrate: 5

@@ -19,4 +19,6 @@ class User < ApplicationRecord
     length: {maximum: Settings.maximum.password}, allow_nil: true
 
   before_save {email.downcase!}
+
+  scope :of_ids, -> ids {where id: ids}
 end

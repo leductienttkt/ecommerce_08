@@ -1,0 +1,19 @@
+<div class="wrapper"> 
+  <div class="rate_info">
+    <span class="score_lb"><%= t "product.rate_score" %></span>
+    <span class="label label-info avg_rate" id ="avg_rate">
+      <%= product.average_rate %>
+    </span>
+  </div>
+  <div>
+    <span class="score_lb"><%= t "product.user_rate" %></span>
+    <%= form_for rating, remote: true do |f| %>
+      <span class="rating">
+        <% (Settings.minrate..Settings.maxrate).each do |number| %>
+          <%= f.radio_button :score, number, id: "rating#{number}" %>
+        <% end %>
+      </span>
+      <%= f.hidden_field :product_id, value: product.id %>
+    <% end %>
+  </div>
+</div>

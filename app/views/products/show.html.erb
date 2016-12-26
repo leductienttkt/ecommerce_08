@@ -1,0 +1,78 @@
+<div class="single-product-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="single-sidebar">
+          <h2 class="sidebar-title"><%= t "same_category" %></h2>
+          <% @product.category.products.
+            take(Settings.default.same_category).each do |product| %>
+            <div class="single-product" >
+              <div class="product-f-image">
+                <%= image_tag product.image, alt: t("product.image")%>
+                <div class="product-hover">
+                  <% if product.quantity > Settings.default.min_product %>
+                    <%= link_to content_tag(:i, t("product.add_to_cart"), 
+                      class: "fa fa-shopping-cart"), 
+                      cart_items_path(product_id: product.id), 
+                      method: :post, class: "add-to-cart-link", remote: true,
+                      data: {confirm: t("confirm.add_to_cart")}
+                    %>
+                  <% end %>
+                  <%= link_to content_tag(:i, t("product.see_detail"), 
+                    class: "fa fa-link"), product_path(product),
+                    class: "view-details-link" %>
+                </div>
+              </div>
+              <h2><%= link_to product.name, product_path(product) %></h2>
+              <div class="product-carousel-price">
+                <ins><%= t "product.price", price: product.price %></ins>
+              </div> 
+            </div>
+          <% end %>
+        </div>        
+      </div>
+      <div class="col-md-8">
+        <div class="product-content-right">
+          <div class="row">
+            <div class="col-sm-6">
+              <h2 class="product-name"><%= @product.name %></h2>	
+              <div class="product-inner-category">
+                <p><%= t "product.category" %>
+                  <%= link_to @product.category.name, "#" %>
+                </p>
+              </div>
+              <div class="product-inner-price">
+                <ins><%= t "product.price_lb" %>
+                  <%= t "product.price", price: @product.price %></ins>
+              </div>
+              <div class="product-inner-price" id="product-show-quantity">
+                <ins><%= t "product.quantity" %><%= @product.quantity %></ins>
+              </div>
+              <div class="product-images">
+                <%= image_tag @product.image, alt: "img" %>
+              </div>
+            </div>
+            <div class="col-sm-6"> 
+              <div class="option-product"> 
+                <div class="in-cart" id="number-product-in-cart">
+                  In cart: 
+                </div>
+                <% if @product.quantity > Settings.default.min_product %>
+                  <%= link_to content_tag(:i, t("product.add_to_cart"), 
+                    class: "fa fa-shopping-cart"), 
+                    cart_items_path(product_id: @product.id), 
+                    method: :post, class: "btn btn-success", remote: true,
+                    data: {confirm: t("confirm.add_to_cart")}
+                  %>
+                <% end %>
+                <% if is_logged_in? %>
+                  <%= render "rate", rating: @rating, product: @product %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

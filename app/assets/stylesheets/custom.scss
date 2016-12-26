@@ -272,6 +272,7 @@ footer ul li {
 .single-product-slide h2 a {
   color: #1abc9c;
 }
+
 .single-product-slide p {
   color: #1abc9c;
   font-weight: 700;
@@ -280,6 +281,7 @@ footer ul li {
 .single-product-slide {
   overflow: hidden;
 }
+
 .single-product-slide:hover {}
 .single-product-slide:hover .product-hover a.add-to-cart-link {top: 30%;}
 .single-product-slide:hover .product-hover a.view-details-link {bottom: 30%;}
@@ -291,4 +293,74 @@ footer ul li {
 
 .new_product {
   margin-top: 50px;
+}
+
+.sidebar-title {
+  color: #3dc6ab;
+  font-size: 25px;
+  margin-bottom: 30px;  
+}
+
+.single-sidebar {
+  margin-top: 50px;
+  width: 70%;
+}
+
+.product-name {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: green;
+}
+
+.product-inner-price {
+  margin-bottom: 25px;
+}
+
+.product-inner-category {
+  margin-bottom: 25px;
+  color: green;
+}
+
+.product-inner-price > ins {
+  color: #1abc9c;
+  font-weight: 700;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.option-product {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.in-cart {
+  font-size: 20px;
+  color: green;
+}
+
+.wrapper {
+  margin: 10px auto;
+  background-color: #fff;
+}
+
+.rating{
+  overflow: hidden;
+  vertical-align: bottom;
+  display: inline-block;
+  width: auto;
+  height: 30px;
+}
+
+.avg_rate {
+  font-size: 20px;
+}
+
+.rate_info {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.score_lb {
+  font-size: 20px;
+  color: green;
 }

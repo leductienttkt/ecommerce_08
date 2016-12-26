@@ -17,3 +17,5 @@ default:
 
 minrate: 1
 maxrate: 5
+per_page:
+  order: 5

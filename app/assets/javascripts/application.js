@@ -31,4 +31,9 @@ $(document).ready(function(){
     e.preventDefault();
     $('#forgetpass-taba').tab('show');
   });
+
+  $(document).on('click', 'input[type=radio]', function(){
+    $('form').submit();
+    alert('Thanks for rating this product');
+  });
 });

@@ -22,3 +22,6 @@ en:
     add_to_cart: "Add to cart"
     image: "product image"
     price: "$%{price}"
+  not_logged_in: "Please login to continue"
+  error:
+    rating_not_found: "Sorry, raitng not found!"

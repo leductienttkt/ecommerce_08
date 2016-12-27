@@ -1,0 +1,27 @@
+<tr>
+  <td class="col-sm-4 text-center">
+    <div class="cart-image">
+      <%= image_tag suggest_product.image, alt: t("product.image") %>
+    </div>
+    <h4 class="media-heading">
+      <%= suggest_product.name %>
+    </h4>
+    <div class="product-carousel-price">
+      <ins><%= t "product.price", price: suggest_product.price %></ins>
+    </div>    
+  </td>
+  <td class="col-sm-2 text-center">
+    <% if suggest_product.is_confirm %>
+      <strong><%= t "suggest_product.status.accpected" %></strong>
+    <% else %>
+      <strong><%= t "suggest_product.status.waiting" %></strong>
+    <% end %>
+  </td>
+  <td class="col-sm-2 text-center">
+    <%= link_to content_tag(:i, "", 
+      class: "glyphicon glyphicon-remove"),
+      suggest_product, method: :delete, 
+      data: {confirm: t("confirm.delete_suggest")},
+      remote: true,  class: "btn btn-danger" %>
+  </td>
+</tr>

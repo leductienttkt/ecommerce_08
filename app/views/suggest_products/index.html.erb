@@ -1,0 +1,15 @@
+<%= link_to t("suggest_product.new"), "#", class: "btn btn-success", 
+  remote: true, data: {toggle: "modal", target: "#"} %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="text-center"><%= t "suggest_product.info" %></th>
+      <th class="text-center"><%= t "suggest_product.status.lb" %></th>
+      <th class="text-center"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @suggest_products %>
+  </tbody>
+</table>
+<%= will_paginate %>

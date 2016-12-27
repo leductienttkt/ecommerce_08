@@ -32,8 +32,24 @@ en:
     user_rate: "Your rate: "
   confirm:
     add_to_cart: "You sure add this product to cart?"
+    delete_suggest: "You sure delete this suggestion?"
   error:
     product_not_found: "Sorry, Product not found!"
     cart_item_not_found: "Sorry, cart item not found!"
     cart_not_found: "Sorry, cart not found!"
     rating_not_found: "Sorry, rating not found!"
+    suggest_not_found: "Sorry, suggest not found!"
+  not_logged_in: "Please login to continue"
+  suggest_product:
+    image: "Image"
+    name: "Name"
+    description: "Description"
+    price: "price"
+    category: "Category"
+    info: "Information"
+    success: "Thank for your suggestion"
+    new: "New Suggest"
+    status:
+      lb: "Status"
+      waiting: "Waiting"
+      accpected: "Accpected"

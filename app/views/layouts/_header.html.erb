@@ -9,8 +9,12 @@
     <div class="shopping-item">
       <%= link_to image_tag("cart.png", alt: t("alt.cart"),
         class: "img-responsive"), "#" %>
-      <span id="price_span" class="cart-amunt"></span> 
-      <span id="quantity_span" class="product-count"></span>
+      <span id="cart_price" class="cart-amunt">
+        <%= t "product.price", price: current_cart.total_price %>
+      </span> 
+      <span id="cart_quantity" class="product-count">
+        <%= current_cart.total_quantity %>
+      </span>
     </div>
   </div>
 </div>

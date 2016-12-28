@@ -14,6 +14,7 @@ default:
   same_category: 10
   round: 1
   min_product: 0
+  quantity_cart_item: 1
 
 minrate: 1
 maxrate: 5

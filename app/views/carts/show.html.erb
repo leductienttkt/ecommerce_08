@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><%= t "cart.product" %></th>
+            <th><%= t "cart.quantity" %></th>
+            <th class="text-center"><%= t "cart.price" %></th>
+            <th class="text-center"><%= t "cart.total" %></th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% current_cart.cart_items.each do |item| %>
+            <tr id="cart_item-<%= item.id %>">
+              <td class="col-sm-8 col-md-6">
+                <div class="media">
+                  <div class="cart-image">
+                    <%= image_tag item.product.image, alt: t("product.image") %>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">
+                      <%= link_to item.product.name, product_path(item.product) %>
+                    </h4>
+                  </div>
+                </div>
+              </td>
+              <td class="col-sm-1 col-md-1">
+                <div id = "edit-cart-item"%>
+                  <div><%= item.quantity %></div>
+                </div>
+                <%= link_to t("cart.change"), edit_cart_item_path(item),
+                  remote: true %>
+              </td>
+              <td class="col-sm-1 col-md-1 text-center">
+                <strong><%= item.cart_price %></strong>
+              </td>              
+              <td class="col-sm-1 col-md-1 text-center item-total-price">
+                <div id= "cart-item-total-price">
+                  <strong>$<%= item.total_price %></strong>
+                </div>
+              </td>
+              <td class="col-sm-1 col-md-1">
+                <%= link_to content_tag(:i, "", 
+                  class: "glyphicon glyphicon-remove"), item, method: :delete,
+                  data: {confirm: t("confirm.delete_cart_item")}, remote: true,
+                  class: "btn btn-danger" %>
+              </td>
+            </tr>   
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-3 total" id="sticker">
+      <table class="table table-hover">
+        <tr>
+          <td><h4><%= t "cart.total" %></h4></td>
+          <td class="text-right">
+            <div id = "cart-total-price">
+            <h4><strong><%= current_cart.total_price %></strong></h4>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to content_tag(:span, t("cart.continue"), 
+              class: "glyphicon glyphicon-shopping-cart"), root_url,
+              class: "btn btn-default"
+            %>
+          </td>
+          <td class="text-right">
+            <% if current_cart.total_quantity > 0 %>
+              <% if is_logged_in? %>
+                <%= link_to t("cart.checkout"), "#", class: "btn btn-success", 
+                  remote: true, data: {toggle: "modal", target: "#new_order_info"}%>
+              <% else %>
+                <%= link_to t("cart.checkout"), "#", class: "btn btn-success", 
+                  remote: true, data: {toggle: "modal", target: "#login_form"}%>
+                <%= render "shared/user_authenticate" %>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%= button_to t("cart.empty"), current_cart, 
+  method: :delete, data: {confirm: t("confirm.delete_cart")} 
+%>

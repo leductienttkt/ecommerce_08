@@ -8,7 +8,7 @@
   <div class="col-sm-6">
     <div class="shopping-item">
       <%= link_to image_tag("cart.png", alt: t("alt.cart"),
-        class: "img-responsive"), "#" %>
+        class: "img-responsive"), cart_path(current_cart) %>
       <span id="cart_price" class="cart-amunt">
         <%= t "product.price", price: current_cart.total_price %>
       </span>

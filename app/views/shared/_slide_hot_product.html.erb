@@ -30,7 +30,7 @@
                 <% end %>
                 <%= link_to content_tag(:i, t("product.see_detail"), 
                   class: "fa fa-link"), 
-                  "#", class: "view-details-link", remote: true %>
+                  product_path(product), class: "view-details-link" %>
               </div>
             </div>
           </div>

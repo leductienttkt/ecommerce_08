@@ -1,5 +1,14 @@
 class ProductsController < ApplicationController
   before_action :load_product, only: :show
+  
+  def index
+    @products_find = Product.by_name(params[:name])
+      .by_category(params[:category]).by_min_price(params[:min])
+      .by_max_price params[:max] 
+    @products = params[:rate].present? ? 
+      @products_find.select{|product| product.average_rate > params[:rate].to_i}:
+      @products_find
+  end
 
   def show
     @cart_item = CartItem.new

@@ -364,3 +364,35 @@ footer ul li {
   font-size: 20px;
   color: green;
 }
+
+.dropdown.dropdown-lg .dropdown-menu {
+  margin-top: -1px;
+  padding: 6px 20px;
+}
+
+.form-group .form-control:last-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+#adv-search {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.dropdown.dropdown-lg {
+  margin-top: 0px;
+}
+
+.dropdown.dropdown-lg .dropdown-menu {
+  min-width: 500px;
+}
+
+.bt-search {
+  margin-left: 0px;
+  margin-top: 15px;
+}
+
+.search-form {
+  margin: 20px;
+}

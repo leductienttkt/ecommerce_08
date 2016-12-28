@@ -34,9 +34,10 @@
             </li>
           <% else %>
             <li><%= link_to t("signin"), "#", class: "glyphicon glyphicon-user", 
-              remote: true, data: {toggle: "modal", target: "#login_form"}%>
+              remote: true, data: {toggle: "modal", target: "#login_form"} %>
             </li>
           <% end %>
+          <li><%= render "shared/search_form" %></li>
         </ul>
       </div>
     </div>

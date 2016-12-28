@@ -7,4 +7,8 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def category_select
+    Category.all.map{|f| [f.name, f.id]}
+  end
 end

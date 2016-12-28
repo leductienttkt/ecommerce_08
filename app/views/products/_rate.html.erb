@@ -7,13 +7,15 @@
   </div>
   <div>
     <span class="score_lb"><%= t "product.user_rate" %></span>
-    <%= form_for rating, remote: true do |f| %>
-      <span class="rating">
-        <% (Settings.minrate..Settings.maxrate).each do |number| %>
-          <%= f.radio_button :score, number, id: "rating#{number}" %>
-        <% end %>
-      </span>
-      <%= f.hidden_field :product_id, value: product.id %>
-    <% end %>
+    <div id="rare-form">
+      <%= form_for rating, remote: true do |f| %>
+        <span class="rating">
+          <% (Settings.minrate..Settings.maxrate).each do |number| %>
+            <%= f.radio_button :score, number, id: "rating#{number}" %>
+          <% end %>
+        </span>
+        <%= f.hidden_field :product_id, value: product.id %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -1,6 +1,17 @@
 class ProductsController < ApplicationController
   before_action :load_product, only: :show
 
+  def index
+    @products = Product.by_name(params[:name])
+      .by_category(params[:category]).by_min_price(params[:min])
+      .by_max_price params[:max] 
+    if params[:rate].present?
+      @products = @products.select do |product| 
+        product.average_rate > params[:rate].to_i
+      end
+    end
+  end
+
   def show
     @cart_item = CartItem.new
     if is_logged_in?

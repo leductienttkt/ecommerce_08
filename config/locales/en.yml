@@ -56,3 +56,11 @@ en:
       lb: "Status"
       waiting: "Waiting"
       accpected: "Accpected"
+  search:
+    lb: "Search"
+    name: "Name: "
+    category: "Category: "
+    min: "Min price ($): "
+    max: "Max price ($): "
+    all: "All"
+    rate: "Rate"

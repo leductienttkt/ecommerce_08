@@ -1,0 +1,5 @@
+$('#cart_item-<%=@cart_item.id %> #edit-cart-item').html('<div><%= @cart_item.quantity %></div>');
+$('#cart_item-<%=@cart_item.id %> #cart-item-total-price').html('<strong>$<%= @cart_item.total_price %></strong>');
+$('#cart_quantity').html('<%= current_cart.total_quantity %>');
+$('#cart_price').html('<%= t "product.price", price: current_cart.total_price %>');
+$('#cart-total-price').html('<%= t "product.price", price: current_cart.total_price %>');

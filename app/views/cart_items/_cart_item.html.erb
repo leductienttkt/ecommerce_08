@@ -1,0 +1,35 @@
+<tr id="cart_item-<%= cart_item.id %>">
+  <td class="col-sm-8 col-md-6">
+    <div class="media">
+      <div class="cart-image">
+        <%= image_tag cart_item.product.image, alt: t("product.image") %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= link_to cart_item.product.name, cart_item.product %>
+        </h4>
+      </div>
+    </div>
+  </td>
+  <td class="col-sm-1 col-md-1">
+    <div id = "edit-cart-item"%>
+      <div><%= cart_item.quantity %></div>
+    </div>
+    <%= link_to t("cart.change"), edit_cart_item_path(cart_item),
+      remote: true %>
+  </td>
+  <td class="col-sm-1 col-md-1 text-center">
+    <strong><%= t "product.price", price: cart_item.cart_price %></strong>
+  </td>              
+  <td class="col-sm-1 col-md-1 text-center item-total-price">
+    <div id= "cart-item-total-price">
+      <strong>$<%= cart_item.total_price %></strong>
+    </div>
+  </td>
+  <td class="col-sm-1 col-md-1">
+    <%= link_to content_tag(:i, "", 
+      class: "glyphicon glyphicon-remove"), cart_item, method: :delete,
+      data: {confirm: t("confirm.delete_cart_item")}, remote: true,
+      class: "btn btn-danger" %>
+  </td>
+</tr>

@@ -1,0 +1,5 @@
+$('#cart-total-price').html( '<h4><strong><%= current_cart.total_price %></strong></h4>');
+$('#cart_item-<%= @cart_item.id %>').remove();
+$('#cart_quantity').html('<%= current_cart.total_quantity %>');
+$('#cart_price').html('<%= t "product.price", price: current_cart.total_price %>');
+$('#cart-total-price').html('<%= t "product.price", price: current_cart.total_price %>');

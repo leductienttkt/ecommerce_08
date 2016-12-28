@@ -1,6 +1,6 @@
 class CartItemsController < ApplicationController
-  before_action :find_product_by_cart_item, only: [:update, :destroy]
   before_action :find_cart, only: :create
+  before_action :load_cart_item, only: [:edit, :update, :destroy]
 
   def create 
     find_product_by_id params[:product_id]
@@ -56,7 +56,7 @@ class CartItemsController < ApplicationController
     params.require(:cart_item).permit :quantity
   end
 
-  def find_cart_item_by_id
+  def load_cart_item
     @cart_item = CartItem.find_by id: params[:id]
     unless @cart_item
       flash[:danger] = t "error.cart_item_not_found"

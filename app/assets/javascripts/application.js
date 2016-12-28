@@ -33,7 +33,7 @@ $(document).ready(function(){
   });
 
   $(document).on('click', 'input[type=radio]', function(){
-    $('form').submit();
+    $('#rate-form form').submit();
     alert('Thanks for rating this product');
   });
 });

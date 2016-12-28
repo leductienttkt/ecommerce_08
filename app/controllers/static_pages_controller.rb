@@ -5,9 +5,12 @@ class StaticPagesController < ApplicationController
     if is_logged_in?
       @recently_products = Product.of_ids RecentlyViewed.product_ids_by_user(current_user.id)
     end
+
     unless current_cart
       current_cart = Cart.create
       cookies.permanent.signed[:cart_id] = current_cart.id
     end
+
+    @user = User.new
   end
 end

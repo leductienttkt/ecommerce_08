@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-sm-6">
     <div class="logo">
-      <%= link_to image_tag("logo.jpg", alt: t("alt.logo"), 
+      <%= link_to image_tag("logo.jpg", alt: t("alt.logo"),
         class: "img-responsive"), "#" %>
     </div>
   </div>
@@ -11,7 +11,7 @@
         class: "img-responsive"), "#" %>
       <span id="cart_price" class="cart-amunt">
         <%= t "product.price", price: current_cart.total_price %>
-      </span> 
+      </span>
       <span id="cart_quantity" class="product-count">
         <%= current_cart.total_quantity %>
       </span>
@@ -29,11 +29,11 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if is_logged_in? %>
-            <li><%= link_to t("signout"), signout_path, method: :delete, 
+            <li><%= link_to t("signout"), signout_path, method: :delete,
               class: "glyphicon glyphicon-user" %>
             </li>
           <% else %>
-            <li><%= link_to t("signin"), "#", class: "glyphicon glyphicon-user", 
+            <li><%= link_to t("signin"), "#", class: "glyphicon glyphicon-user",
               remote: true, data: {toggle: "modal", target: "#login_form"}%>
             </li>
           <% end %>
@@ -42,4 +42,6 @@
     </div>
   </div>
 </div>
-<%= render "shared/user_authenticate" %>
+<% unless is_logged_in? %>
+  <%= render "shared/user_authenticate" %>
+<% end %>

@@ -1,0 +1,6 @@
+<%= form_for @cart_item, html: {multipart: true}, remote: true do |f| %>
+  <%= f.number_field :quantity, min: Settings.minproduct, 
+    max: @cart_item.quantity + @cart_item.product.quantity %>                
+  <%= f.submit t("cart.change"), 
+    class: "btn btn-primary btn-info form-control refresh" %>
+<% end %>

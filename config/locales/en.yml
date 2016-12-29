@@ -36,6 +36,8 @@ en:
   confirm:
     add_to_cart: "You sure add this product to cart?"
     delete_suggest: "You sure delete this suggestion?"
+    delete_cart_item: "You sure delete this item?"
+    delete_cart: "You sure empty this cart?"
   error:
     product_not_found: "Sorry, Product not found!"
     cart_item_not_found: "Sorry, cart item not found!"
@@ -64,3 +66,12 @@ en:
     max: "Max price ($): "
     all: "All"
     rate: "Rate"
+  cart:
+    product: "Product"
+    quantity: "Quantity"
+    price: "Price"
+    total: "Total"
+    change: "Change"
+    continue: "Continue shopping"
+    checkout: "Checkout"
+    empty: "Empty cart"

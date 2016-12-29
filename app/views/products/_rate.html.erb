@@ -7,7 +7,7 @@
   </div>
   <div>
     <span class="score_lb"><%= t "product.user_rate" %></span>
-    <div id="rare-form">
+    <div id="rate-form">
       <%= form_for rating, remote: true do |f| %>
         <span class="rating">
           <% (Settings.minrate..Settings.maxrate).each do |number| %>

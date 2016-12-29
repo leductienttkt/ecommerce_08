@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
 
   def show
     @cart_item = CartItem.new
+    @comments = @product.comments
     if is_logged_in?
       save_recently_view
       if @product.rated_by? current_user

@@ -55,7 +55,7 @@
             <div class="col-sm-6"> 
               <div class="option-product"> 
                 <div class="in-cart" id="number-product-in-cart">
-                  In cart: 
+                  <%= t "product.in_cart" %> 
                 </div>
                 <% if @product.quantity > Settings.default.min_product %>
                   <%= link_to content_tag(:i, t("product.add_to_cart"), 
@@ -71,6 +71,13 @@
                   </div>
                 <% end %>
               </div>
+              <div><h2><%= t "review.lb" %></h2></div>
+              <div id="show_comments-<%= @product.id %>">
+                <%= render @product.comments %>
+              </div>
+              <% if is_logged_in? %>
+                <%= render "comments/new_comment_form" %>
+              <% end%>
             </div>
           </div>
         </div>

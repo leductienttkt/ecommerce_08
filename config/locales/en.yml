@@ -33,18 +33,20 @@ en:
     same_category: "Same Category"
     rate_score: "Rate score: "
     user_rate: "Your rate: "
+    in_cart: "In cart"
   confirm:
     add_to_cart: "You sure add this product to cart?"
     delete_suggest: "You sure delete this suggestion?"
     delete_cart_item: "You sure delete this item?"
     delete_cart: "You sure empty this cart?"
+    delete_comment: "You sure delete this comment?"
   error:
     product_not_found: "Sorry, Product not found!"
     cart_item_not_found: "Sorry, cart item not found!"
     cart_not_found: "Sorry, cart not found!"
     rating_not_found: "Sorry, rating not found!"
     suggest_not_found: "Sorry, suggest not found!"
-  not_logged_in: "Please login to continue"
+    comment_not_found: "Sorry, comment not found!"
   suggest_product:
     image: "Image"
     name: "Name"
@@ -75,3 +77,10 @@ en:
     continue: "Continue shopping"
     checkout: "Checkout"
     empty: "Empty cart"
+  review:
+    lb: "Review"
+    ago: " ago"
+    delete: "Delete"
+    edit: "Edit"
+    new_comment: "new comment..."
+    edit_comment: "edit comment..."

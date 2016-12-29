@@ -1,0 +1,2 @@
+$('#show_comments-<%= @product.id %>').html('<%= j render @product.comments %>');
+$('#comment_content_field-<%= @product.id %>').val('');

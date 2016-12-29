@@ -21,4 +21,8 @@ class User < ApplicationRecord
   before_save {email.downcase!}
 
   scope :of_ids, -> ids {where id: ids}
+
+  def is_user? user
+    self == user
+  end
 end

@@ -1,0 +1,16 @@
+<li class="comment" id="comment-<%= comment.id %>">
+  <span class="user"><%= link_to comment.user.name, comment.user %></span>
+  <span class="content" id="comment_content-<%= comment.id %>">
+    <%= simple_format comment.content %>
+  </span>
+  <span class="timestamp">
+    <%= time_ago_in_words comment.created_at %><%= t "review.ago" %>
+  </span>
+  <% if current_user.is_user? comment.user %>
+    <%= link_to t("review.delete"), comment, method: :delete,
+      data: {confirm: t("confirm.delete_comment")},
+      remote: true %>
+    <%= link_to t("review.edit"), edit_comment_path(comment), 
+      remote: true%>
+  <% end %>     
+</li>

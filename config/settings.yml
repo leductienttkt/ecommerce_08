@@ -24,3 +24,9 @@ per_page:
   suggest: 5
   product: 10
 min_product: 1
+
+fb_comment: 5
+url: https://ecommerce-08.herokuapp.com/products/
+url_cmt: https://ecommerce-08.herokuap.com/products/
+fb_url: https://www.facebook.com/sharer/sharer.php?u=
+cmt_width: 450

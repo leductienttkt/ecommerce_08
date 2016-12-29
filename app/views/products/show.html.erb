@@ -8,7 +8,7 @@
             take(Settings.default.same_category).each do |product| %>
             <div class="single-product" >
               <div class="product-f-image">
-                <%= image_tag product.image, alt: t("product.image")%>
+                <%= image_tag product.image, alt: t("product.image") %>
                 <div class="product-hover">
                   <% if product.quantity > Settings.default.min_product %>
                     <%= link_to content_tag(:i, t("product.add_to_cart"), 
@@ -49,7 +49,23 @@
                 <ins><%= t "product.quantity" %><%= @product.quantity %></ins>
               </div>
               <div class="product-images">
-                <%= image_tag @product.image, alt: "img" %>
+                <%= image_tag @product.image, alt: t("product.image") %>
+              </div>
+              <div class="product-description">
+                <%= @product.description %>
+              </div>
+              <div class="fb-share-button" 
+                data-href="<%= Settings.url %><%= @product.id %>"
+                data-layout="button_count" data-size="large" 
+                data-mobile-iframe="true">
+                <%= link_to t("share"), 
+                  Settings.fb_url+Settings.url+@product.id.to_s, 
+                  class: "fb-xfbml-parse-ignore", target: "_blank" %>
+              </div>
+              <div class="fb-comments" 
+                data-href="<%= Settings.url_cmt %><%= @product.id %>" 
+                data-width="<%= Settings.cmt_width %>" 
+                data-numposts="<%= Settings.fb_comment %>">
               </div>
             </div>
             <div class="col-sm-6"> 

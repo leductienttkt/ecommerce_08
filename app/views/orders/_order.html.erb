@@ -1,0 +1,41 @@
+<tr id = "order-<%= order.id %>">
+  <td class="col-sm-4 order-info" id="receiver-info">
+    <div><%= t "order.name" %><%= order.receiver_name %></div>  
+    <div><%= t "order.address" %><%= order.receiver_address %></div>  
+    <div><%= t "order.phone" %><%= order.receiver_phone %></div>  
+    <div><%= t "order.created_at" %>
+      <%= l order.created_at, format: :format_date %>
+    </div>
+  </td>
+  <td class="col-sm-2 text-center">
+    <%= order.total_quantity %>     
+  </td>
+  <td class="col-sm-2 text-center item-total-price ">
+    <div id= "cart-item-total-price">
+       <%= t "product.price", price: order.total_price %>
+    </div>
+  </td>
+  <td class="col-sm-2 text-center">
+    <% if order.is_confirm %>
+      <strong class="order-accpect"><%= t "order.status.accepted" %></strong>
+    <% else %>
+      <strong class="order-waiting"><%= t "order.status.waiting" %></strong>
+    <% end %>
+  </td>
+  <td class="col-sm-2 text-center">
+    <%= link_to content_tag(:i, "", 
+      class: "glyphicon glyphicon-eye-open", title: t("order.title.detail")),
+      order, class: "btn btn-info" %>
+    <% unless order.is_confirm %>
+      <%= link_to content_tag(:i, "", 
+        class: "glyphicon glyphicon-pencil", title: t("order.title.edit")), 
+        edit_order_path(order), 
+        remote: true, class: "btn btn-warning" %>
+      <%= link_to content_tag(:i, "", 
+        class: "glyphicon glyphicon-remove", title: t("order.title.delete")),
+        order, method: :delete,
+        data: {confirm: t("confirm.delete_order")},
+        remote: true, class: "btn btn-danger" %>
+    <% end %>
+  </td>
+</tr> 

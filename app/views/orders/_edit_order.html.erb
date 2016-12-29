@@ -1,0 +1,7 @@
+<%= form_for @order, html: {multipart: true}, remote: true do |f| %>
+  <div><%= t "order.name" %><%= f.text_field :receiver_name %></div>
+  <div><%= t "order.address" %><%= f.text_field :receiver_address %></div>              
+  <div><%= t "order.phone" %><%= f.text_field :receiver_phone %> </div> 
+  <%= f.submit t("order.submit"), 
+    class: "btn btn-primary btn-info form-control refresh" %>
+<% end %>

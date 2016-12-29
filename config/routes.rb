@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :suggest_products
   resources :carts
   resources :comments
+  resources :orders
 end

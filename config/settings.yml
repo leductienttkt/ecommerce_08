@@ -23,4 +23,5 @@ ratestep: 0.1
 per_page:
   suggest: 5
   product: 10
+  order: 5
 min_product: 1

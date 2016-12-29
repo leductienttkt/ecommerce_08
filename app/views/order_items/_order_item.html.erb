@@ -1,0 +1,26 @@
+<tr class="text-center" id="order_item-<%= order_item.id %>">
+  <td class="col-sm-6 col-md-4">
+    <div class="media">
+      <div class="cart-image">
+        <%= image_tag order_item.product.image, alt: t("product.image") %></div>
+        <div class="media-body">
+          <h4 class="media-heading">
+            <%= link_to order_item.product.name, order_item.product %>
+          </h4>
+        </div>
+      </div>
+  </td>
+  <td class="col-sm-2 col-md-2">
+    <div id = "edit-cart-item"%>
+      <div><%= order_item.quantity %></div>
+    </div>
+  </td>
+  <td class="col-sm-2 col-md-2 text-center">
+    <strong><%= t "product.price", price: order_item.order_price %></strong>
+  </td>
+  <td class="col-sm-2 col-md-2 text-center item-total-price">
+    <div id= "cart-item-total-price">
+      <strong><%= t "product.price", price: order_item.total_price %></strong>
+    </div>
+  </td>
+</tr>

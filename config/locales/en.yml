@@ -40,6 +40,7 @@ en:
     delete_cart_item: "You sure delete this item?"
     delete_cart: "You sure empty this cart?"
     delete_comment: "You sure delete this comment?"
+    delete_order: "Delete this order?"
   error:
     product_not_found: "Sorry, Product not found!"
     cart_item_not_found: "Sorry, cart item not found!"
@@ -84,3 +85,31 @@ en:
     edit: "Edit"
     new_comment: "new comment..."
     edit_comment: "edit comment..."
+  order_success: "Order success!"
+  order:
+    title:
+      detail: "Detail"
+      edit: "Edit"
+      delete: "Delete"
+    detail:
+      detail_lb: "Order detail"
+      product: "Product"
+      quantity: "Quantity"
+      price: "Price"
+      total: "Total"
+    info: "Information"
+    total_product: "Total products"
+    total_price: "Total price"
+    name: "Receiver name: " 
+    phone: "Receiver phone: " 
+    address: "Receiver address: "
+    submit: "Submit" 
+    created_at: "Created at: "
+    status:
+      status_lb: "Status"
+      accepted: "Accepted"
+      waiting: "Waiting"
+  time:
+    formats:
+      format_date: "%d/%m/%Y"
+  destroy_cart_fail: "Fail to destroy cart"

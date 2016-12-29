@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20161216044013) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer "quantity"
+    t.float "order_price"
     t.integer "product_id"
     t.integer "order_id"
     t.datetime "created_at", null: false
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 20161216044013) do
     t.string "receiver_name"
     t.string "receiver_address"
     t.string "receiver_phone"
+    t.boolean "is_confirm", default: false
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

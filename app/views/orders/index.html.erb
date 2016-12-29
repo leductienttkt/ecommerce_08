@@ -1,0 +1,15 @@
+<table class="table table-hover orders">
+  <thead>
+    <tr>
+      <th class="text-center"><%= t "order.info" %></th>
+      <th class="text-center"><%= t "order.total_product" %></th>
+      <th class="text-center"><%= t "order.total_price" %></th>
+      <th class="text-center"><%= t "order.status.status_lb" %></th>
+      <th class="text-center"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @orders %>
+  </tbody>
+</table>
+<%= will_paginate %>

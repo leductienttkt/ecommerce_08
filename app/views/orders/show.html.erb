@@ -1,0 +1,81 @@
+<h2><%= t "order.detail.detail_lb" %></h2>
+<div class="container order-detail">
+  <div class="row">
+    <div class="col-lg-8">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th class="text-center"><%= t "order.detail.product" %></th>
+            <th class="text-center"><%= t "order.detail.quantity" %></th>
+            <th class="text-center"><%= t "order.detail.price" %></th>
+            <th class="text-center"><%= t "order.detail.total" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @order.order_items %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-4 total">
+      <table class="table table-hover">
+        <tr>
+          <td><h4><%= t "order.status.status_lb" %></h4></td>
+          <td class="text-right">
+            <% @order.is_confirm? %>
+              <h4>
+                <strong class="order-accpect">
+                  <%= t "order.status.accepted" %>
+                </strong>
+              </h4>
+            <% else %>
+              <h4><strong class="order-waiting">
+                <%= t "order.status.waiting" %>
+              </strong></h4>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td><h4><%= t "order.total_product" %></h4></td>
+          <td class="text-right">
+            <div id = "cart-total-price"><h4><strong>
+              <%= @order.total_quantity %></strong></h4>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><h4><%= t "order.total_price" %></h4></td>
+          <td class="text-right">
+            <div id = "cart-total-price">
+              <h4><strong>
+                <%= t "product.price", price: @order.total_price %>
+              </strong></h4>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><h4><%= t "order.name" %></h4></td>
+          <td class="text-right">
+            <div><h4><strong><%= @order.receiver_name %></h4></div></strong>
+          </td>
+        </tr> 
+        <tr>
+          <td><h4><%= t "order.total_address" %></h4></td>
+          <td class="text-right">
+            <div><h4><strong><%= @order.receiver_address %></h4></div></strong>
+          </td>
+        </tr> 
+        <tr>
+          <td><h4><%= t "order.total_phone" %></h4></td>
+          <td class="text-right">
+            <div><h4><strong><%= @order.receiver_phone %></h4></div></strong>
+          </td>
+        </tr>
+        <tr>
+          <div class="text-right"><%= t "order.created_at" %>
+            <%= l @order.created_at, format: :format_date %>
+          </div>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
